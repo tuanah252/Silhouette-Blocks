@@ -8,6 +8,8 @@ public class OnDrag : MonoBehaviour
     public float limit = 2.6f;
     // Start is called before the first frame update
     private bool check;
+    private float rotation;
+
     Vector3 offset;
     private object collision;
 
@@ -33,8 +35,14 @@ public class OnDrag : MonoBehaviour
         {
             transform.position = new Vector3(0.1f, limit + 5, -3.58f);
         }
+
     }
 
+    void OnMouseUp()
+    {
+        rotation += 90;
+        transform.rotation = Quaternion.Euler(0, rotation, 0);
+    }
 }
 
 
